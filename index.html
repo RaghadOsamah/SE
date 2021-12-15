@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -6,12 +6,17 @@
 </head>
 
 <body>
-<form action="/fasttext">
+	<h2>Ghada ,Norah , Raghad and Shatha System</h2>
+<form action="/fasttext" method="get">
 	Enter your text to be classified<br>
-	<input type="text" name="statement">
+	<input id="text" type="text" name="statement">
 	<input type="submit" value="Submit">
+	<button onclick="document.getElementById('text').value = ''">Clear</button>
 </form> 
+<img src="https://imamu.edu.sa/PublishingImages/logo/%D8%B4%D8%B9%D8%A7%D8%B1_%D8%AC%D8%A7%D9%85%D8%B9%D8%A9_%D8%A7%D9%84%D8%A5%D9%85%D8%A7%D9%85_%D8%A8%D8%A7%D9%84%D8%B8%D9%84_%D9%84%D9%84%D8%AA%D8%AD%D9%85%D9%8A%D9%84.png" id=i1 width = '100px' height = '100px'  style="position: absolute; top: 0px; right: 0px;">
+<hr>
+<div id="display"></div>
 
 </body>
 
-</html> 
+</html>

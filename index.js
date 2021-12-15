@@ -1,6 +1,9 @@
 const express = require('express')
 const app = express();
 var FastText = require('node-fasttext');
+var data  = [];
+var titleInput  = document.getElementById("title").value;
+var messageBox  = document.getElementById("display").value;
 const cors = require('cors');
 
 let config = { 
@@ -46,7 +49,32 @@ function getFastTextResults(statement) {
 		})
 	return "success!";
 }
+function insert ( ) {
+  title = titleInput.value;
+  data.push({
+    title: title
+  });
+  clearAndShow();
+}
+function clearAndShow () {
+  // Clear our fields
+  titleInput.value = "";
+   // Show our output
+   messageBox.innerHTML = "";
 
+   messageBox.innerHTML = computeHTML();
+}
+function computeHTML() {
+  var html = "<table>";
+  console.log(data)
+  data.forEach(function(item) {
+    html += "<tr>";
+    html += "<td>" + item.title + "</td>"
+    html += "</tr>";
+  });
+  html += "</table>"
+  return html;
+}
 app.listen(8000, () => {
   console.log('Listening on port 8000!')
 });
